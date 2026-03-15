@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+#!DOCTYPE html
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -82,12 +82,12 @@
             <div class="img-wrapper" style="width: 100%; height: calc(100vh - 220px);">
                 <iframe src="https://jspaint.app" style="width:100%; height:100%; border:none; display:block;" allowfullscreen></iframe>
             </div>
-            <p class="sketch-credits" style="margin-top: 12px; font-size: 11px; color: #444;">this is an external website created by <a href="https://github.com/1j01" target="_blank">isaiah odhner</a>, check out his github here</p>
+            <p class="sketch-credits" style="margin-top: 12px; font-size: 11px; color: #444;">this is an external website created by <a href="https://github.com/1j01" target="_blank">isaiah odhner</a>, check out his github</p>
         </div>
 
         <div class="card" style="padding: 25px; margin-top: 30px;">
-            <p class="section-title">send me your drawing!1</p>
-            <p style="text-align:center; font-size:13px; color:#888; margin-top:-10px; margin-bottom:20px;">screenshot your creation and send it here :)</p>
+            <p class="section-title">send me your drawing!</p>
+            <p style="text-align:center; font-size:13px; color:#888; margin-top:-10px; margin-bottom:20px;">save your creation and send it here :)</p>
             <form id="sketchForm" style="display:flex; flex-direction:column; gap:12px;">
                 <input type="text" name="fi-sender-fullName" placeholder="your name or alias" required class="sketch-input">
                 <input type="file" name="fi-file-drawing" accept="image/*" required class="sketch-input">
@@ -99,26 +99,6 @@
     </div>
 </div>
 <script src="https://forminit.com/sdk/v1/forminit.js"></script>
-<script>
-    const forminit = new Forminit();
-    document.getElementById('sketchForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const status = document.getElementById('formStatus');
-        status.style.display = 'block';
-        status.style.color = '#888';
-        status.textContent = 'sending...';
-        const { data, error } = await forminit.submit('l2oj4i0hu9j', new FormData(e.target));
-        if (error) {
-            status.style.color = '#ff4444';
-            status.textContent = 'something went wrong... try again!';
-            return;
-        }
-        status.style.color = '#1DB954';
-        status.textContent = 'drawing sent! thanks :)';
-        e.target.reset();
-        e.target.style.display = 'none';
-    });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
