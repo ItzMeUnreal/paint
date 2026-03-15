@@ -1,4 +1,4 @@
-#!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -88,7 +88,9 @@
         <div class="card" style="padding: 25px; margin-top: 30px;">
             <p class="section-title">send me your drawing!</p>
             <p style="text-align:center; font-size:13px; color:#888; margin-top:-10px; margin-bottom:20px;">screenshot your creation and send it here :)</p>
-            <form action="https://forminit.com/f/l2oj4i0hu9j" method="POST" enctype="multipart/form-data" style="display:flex; flex-direction:column; gap:12px;">
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" style="display:flex; flex-direction:column; gap:12px;">
+                <input type="hidden" name="access_key" value="fc6121fe-2506-4616-9c79-93336d56d452">
+                <input type="hidden" name="subject" value="new sketch submission!">
                 <input type="text" name="name" placeholder="your name or alias" required class="sketch-input">
                 <input type="file" name="drawing" accept="image/*" required class="sketch-input">
                 <textarea name="message" placeholder="say something about your drawing! (optional)" rows="3" class="sketch-input"></textarea>
