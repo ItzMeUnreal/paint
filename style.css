@@ -10,6 +10,8 @@ body {
     overflow-x: hidden;
     background: url('https://itzmeunreal.neocities.org/images/scrolling-bg.gif') repeat;
     background-size: 80px;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
@@ -199,6 +201,11 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
+.card-padded {
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
 .profile-section {
     display: flex;
     align-items: center;
@@ -219,6 +226,10 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+}
+
+.about-text {
+    flex: 1;
 }
 
 .about-section p + p {
@@ -412,7 +423,86 @@ body {
     color: #e0e0e0;
     margin-bottom: 30px;
 }
-/* sketchbook */
+
+.back-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.site-badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.pixel-img {
+    image-rendering: pixelated;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.arcade-frame-wrapper {
+    width: 100%;
+    height: 560px;
+}
+
+.arcade-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.game-label {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.arcade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.arcade-thumb-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    outline: 3px solid #444;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    overflow: hidden;
+    cursor: pointer;
+    transition: outline-color 0.2s ease;
+}
+
+.arcade-thumb-wrapper:hover .img-caption {
+    opacity: 1;
+}
+
+.arcade-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #1a1a1a;
+    display: block;
+}
+
 .sketch-input {
     background: #111;
     border: 1px solid #333;
@@ -453,15 +543,6 @@ textarea.sketch-input {
     text-decoration: underline;
 }
 
-.section-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
 .drawing-featured {
     width: 100%;
     height: 300px;
@@ -491,36 +572,47 @@ textarea.sketch-input {
     font-family: Arial, sans-serif;
 }
 
-.arcade-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.fullscreen-body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.fullscreen-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.sketch-frame-wrapper {
+    width: 100%;
+    height: 600px;
+}
+
+.sketch-form {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-.arcade-thumb-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    border-radius: 8px;
-    outline: 3px solid #444;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-    overflow: hidden;
+.form-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.form-submit {
+    align-self: center;
     cursor: pointer;
-    transition: outline-color 0.2s ease;
 }
 
-
-
-.arcade-thumb-wrapper:hover .img-caption {
-    opacity: 1;
-}
-
-.arcade-thumb {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: #1a1a1a;
-    display: block;
+.form-status {
+    display: none;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
 }
