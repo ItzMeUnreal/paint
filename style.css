@@ -14,6 +14,20 @@ body {
     flex-direction: column;
 }
 
+:root {
+    --scrollbar-color-thumb: #2a2a2a;
+    --scrollbar-color-track: #1a1a1a;
+    --scrollbar-width: auto;
+    --scrollbar-width-legacy: 8px;
+}
+ 
+@supports (scrollbar-width: auto) {
+    * {
+        scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+        scrollbar-width: var(--scrollbar-width);
+    }
+}
+
 .content {
     position: relative;
     z-index: 1;
